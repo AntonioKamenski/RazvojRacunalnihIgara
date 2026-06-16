@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728358e67cfa0e34d92f0b0a831d0dc0, type: 3}
+  m_Name: Arrow Volley
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
+  upgradeName: Arrow Volley
+  description: Fires a spread of arrows at the nearest enemy.
+  icon: {fileID: -7701368564242196257, guid: e474454f80aec39449e4eb1e48fd3bc7, type: 3}
+  type: 0
+  maxLevel: 5

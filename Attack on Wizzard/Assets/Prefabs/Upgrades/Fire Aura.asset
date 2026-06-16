@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728358e67cfa0e34d92f0b0a831d0dc0, type: 3}
+  m_Name: Fire Aura
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
+  upgradeName: Fire Aura
+  description: Continuously burns all enemies within close range.
+  icon: {fileID: -2925290275843476097, guid: 29fae6d4cbc7f3c45bad2fd93e64b371, type: 3}
+  type: 3
+  maxLevel: 5

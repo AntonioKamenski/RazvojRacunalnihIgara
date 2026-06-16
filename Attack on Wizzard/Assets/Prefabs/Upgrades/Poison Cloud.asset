@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728358e67cfa0e34d92f0b0a831d0dc0, type: 3}
+  m_Name: Poison Cloud
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
+  upgradeName: Poison Cloud
+  description: Drops a lingering poison cloud at the player's feet.
+  icon: {fileID: 8771933678744613672, guid: 41615a47abdccde42804788c9c8766fb, type: 3}
+  type: 6
+  maxLevel: 5

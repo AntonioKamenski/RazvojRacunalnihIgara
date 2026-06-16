@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76dfd96f853ae5439789432d245a094, type: 3}
+  m_Name: StormTitan
+  m_EditorClassIdentifier: Assembly-CSharp::BossData
+  bossName: Storm Titan
+  description: "Born from a storm that never ended. Lightning is not its weapon \u2014
+    it is lightning, given rage and purpose. The ground it walks on still crackles
+    for hours after it passes."
+  bossImage: {fileID: -2966200626249415253, guid: 172875abb853bf242acb05a5d7af4de1, type: 3}
+  weakElement: 4
+  bossPrefab: {fileID: 8237485441478479207, guid: 03994196963bd644292a5cf7fc8ac792, type: 3}
+  portalPrefab: {fileID: 7515255400348273638, guid: 1513eb643e18da74dbb8be7b7e5cbc0f, type: 3}
