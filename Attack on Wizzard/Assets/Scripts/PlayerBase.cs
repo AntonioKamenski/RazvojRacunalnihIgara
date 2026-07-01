@@ -134,6 +134,7 @@ public class PlayerBase : MonoBehaviour
 
     public void SetBonusElement(ElementType element) => bonusElement = element;
     public void SetMoveSpeed(float speed) => moveSpeed = speed;
+    public void SetDefense(float amount) => defense = amount;
     public void AddMaxHP(float amount) { maxHP += amount; currentHP += amount; RefreshHealthBar(); }
     public void AddDefense(float amount) => defense += amount;
 

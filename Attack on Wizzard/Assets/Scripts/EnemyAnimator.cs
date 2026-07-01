@@ -3,6 +3,9 @@ using System.Collections;
 
 public class EnemyAnimator : MonoBehaviour
 {
+    [Header("Facing")]
+    [SerializeField] private bool flipFacingOnX;
+
     [Header("Idle / Walk")]
     [SerializeField] private Sprite[] idleFrames;
     [SerializeField] private float idleFps = 8f;
@@ -22,6 +25,8 @@ public class EnemyAnimator : MonoBehaviour
         if (idleFrames != null && idleFrames.Length > 0)
             sr.sprite = idleFrames[0];
     }
+
+    public bool FlipFacingOnX => flipFacingOnX;
 
     private void Update()
     {

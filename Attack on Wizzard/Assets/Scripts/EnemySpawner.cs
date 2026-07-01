@@ -78,6 +78,51 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector2 GetSpawnPosition()
     {
+        if (MapBorders.Instance != null)
+        {
+            float minX = MapBorders.Instance.minX + spawnMargin;
+            float maxX = MapBorders.Instance.maxX - spawnMargin;
+            float minY = MapBorders.Instance.minY + spawnMargin;
+            float maxY = MapBorders.Instance.maxY - spawnMargin;
+
+            if (minX > maxX)
+            {
+                float centerX = (MapBorders.Instance.minX + MapBorders.Instance.maxX) * 0.5f;
+                minX = maxX = centerX;
+            }
+
+            if (minY > maxY)
+            {
+                float centerY = (MapBorders.Instance.minY + MapBorders.Instance.maxY) * 0.5f;
+                minY = maxY = centerY;
+            }
+
+            int edge = Random.Range(0, 4);
+            float x, y;
+
+            switch (edge)
+            {
+                case 0:
+                    x = Random.Range(minX, maxX);
+                    y = maxY;
+                    break;
+                case 1:
+                    x = Random.Range(minX, maxX);
+                    y = minY;
+                    break;
+                case 2:
+                    x = minX;
+                    y = Random.Range(minY, maxY);
+                    break;
+                default:
+                    x = maxX;
+                    y = Random.Range(minY, maxY);
+                    break;
+            }
+
+            return new Vector2(x, y);
+        }
+
         if (mainCam == null)
             return Vector2.zero;
 
@@ -85,24 +130,18 @@ public class EnemySpawner : MonoBehaviour
         float halfW = halfH * mainCam.aspect + spawnMargin;
         Vector2 center = mainCam.transform.position;
 
-        int edge = Random.Range(0, 4);
-        float x, y;
+        int fallbackEdge = Random.Range(0, 4);
+        float fallbackX, fallbackY;
 
-        switch (edge)
+        switch (fallbackEdge)
         {
-            case 0: x = Random.Range(center.x - halfW, center.x + halfW); y = center.y + halfH; break;
-            case 1: x = Random.Range(center.x - halfW, center.x + halfW); y = center.y - halfH; break;
-            case 2: x = center.x - halfW; y = Random.Range(center.y - halfH, center.y + halfH); break;
-            default: x = center.x + halfW; y = Random.Range(center.y - halfH, center.y + halfH); break;
+            case 0: fallbackX = Random.Range(center.x - halfW, center.x + halfW); fallbackY = center.y + halfH; break;
+            case 1: fallbackX = Random.Range(center.x - halfW, center.x + halfW); fallbackY = center.y - halfH; break;
+            case 2: fallbackX = center.x - halfW; fallbackY = Random.Range(center.y - halfH, center.y + halfH); break;
+            default: fallbackX = center.x + halfW; fallbackY = Random.Range(center.y - halfH, center.y + halfH); break;
         }
 
-        if (MapBorders.Instance != null)
-        {
-            x = Mathf.Clamp(x, MapBorders.Instance.minX, MapBorders.Instance.maxX);
-            y = Mathf.Clamp(y, MapBorders.Instance.minY, MapBorders.Instance.maxY);
-        }
-
-        return new Vector2(x, y);
+        return new Vector2(fallbackX, fallbackY);
     }
 
     private GameObject PickWeightedRandom()

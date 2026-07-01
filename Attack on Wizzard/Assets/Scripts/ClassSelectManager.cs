@@ -31,10 +31,10 @@ public class ClassSelectManager : MonoBehaviour
 
     private static readonly string[] Passives =
     {
-        "Passive — Fortify: Take 15% less damage when below 50% HP.",
-        "Passive — Evasion: 15% chance to dodge any incoming hit entirely.",
-        "Passive — Chill: All attacks slow enemies by 50% for 1.5 seconds.",
-        "Passive — Swiftness: Attack speed increases the longer you keep moving (up to +40%)."
+        "Passive - Fortify: Take 15% less damage when below 50% HP.",
+        "Passive - Evasion: 15% chance to dodge any incoming hit entirely.",
+        "Passive - Chill: All attacks slow enemies by 50% for 1.5 seconds.",
+        "Passive - Swiftness: Attack speed increases the longer you keep moving (up to +40%)."
     };
 
     private void Start()

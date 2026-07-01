@@ -4,13 +4,18 @@ using System.Collections.Generic;
 public class ChainLightningUpgrade : ActiveUpgradeBase
 {
     private GameObject lightningEffectPrefab;
+    private float lightningEffectRotationOffset;
     private float cooldown = 3f;
     private float timer = 0f;
     private float damage = 20f;
     private float chainRange = 5f;
     private int chains = 3;
 
-    public void Init(GameObject effectPrefab) => lightningEffectPrefab = effectPrefab;
+    public void Init(GameObject effectPrefab, float rotationOffset)
+    {
+        lightningEffectPrefab = effectPrefab;
+        lightningEffectRotationOffset = rotationOffset;
+    }
 
     protected override void OnLevelUp()
     {
@@ -53,7 +58,7 @@ public class ChainLightningUpgrade : ActiveUpgradeBase
     private void SpawnEffect(Vector2 pos)
     {
         if (lightningEffectPrefab == null) return;
-        var go = Instantiate(lightningEffectPrefab, pos, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+        var go = Instantiate(lightningEffectPrefab, pos, Quaternion.Euler(0f, 0f, lightningEffectRotationOffset));
         var effect = go.GetComponent<TemporarySpriteEffect>();
         if (effect == null) effect = go.AddComponent<TemporarySpriteEffect>();
     }

@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     [Header("Music")]
     [SerializeField] private AudioClip menuMusic;
     [SerializeField] private AudioClip[] gameMusicTracks;
+    [SerializeField, Range(0f, 1f)] private float musicVolume = 1f;
 
     [Header("SFX — UI")]
     [SerializeField] private AudioClip buttonClickClip;
@@ -76,6 +77,7 @@ public class AudioManager : MonoBehaviour
 
         musicSource = GetComponent<AudioSource>();
         musicSource.loop = true;
+        musicSource.volume = musicVolume;
 
         sfxSource = gameObject.AddComponent<AudioSource>();
         sfxSource.playOnAwake = false;
@@ -116,9 +118,19 @@ public class AudioManager : MonoBehaviour
         if (clip == null) return;
         if (musicSource.clip == clip && musicSource.isPlaying) return;
         musicSource.clip = clip;
+        musicSource.volume = musicVolume;
         if (GameManager.Instance != null && GameManager.Instance.IsMusicEnabled)
             musicSource.Play();
     }
+
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = Mathf.Clamp01(volume);
+        if (musicSource != null)
+            musicSource.volume = musicVolume;
+    }
+
+    public float GetMusicVolume() => musicVolume;
 
     public void SetMusicEnabled(bool enabled)
     {

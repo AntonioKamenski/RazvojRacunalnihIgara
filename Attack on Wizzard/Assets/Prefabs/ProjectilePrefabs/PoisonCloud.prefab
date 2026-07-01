@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2766124742464879443}
   - component: {fileID: 8045570078227903086}
   - component: {fileID: 6875849789460846441}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PoisonCloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4577811501091305298, guid: dd5a24e6f54d3f04eb6ff6811ba539a5, type: 3}
+  m_Sprite: {fileID: -6319378419387522244, guid: 198542a29292fb54885d5aa3176d8800, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

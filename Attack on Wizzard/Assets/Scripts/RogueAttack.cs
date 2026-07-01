@@ -4,7 +4,7 @@ using System.Collections;
 public class RogueAttack : PlayerAttackBase
 {
     [Header("Rogue — Dual Slash Settings")]
-    [SerializeField] private float slashRange = 1.5f;
+    [SerializeField] private float slashRange = 3f;
     [SerializeField] private float secondSlashDelay = 0.12f;
 
     private void Reset()

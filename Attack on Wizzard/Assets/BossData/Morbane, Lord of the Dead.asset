@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76dfd96f853ae5439789432d245a094, type: 3}
+  m_Name: Morbane, Lord of the Dead
+  m_EditorClassIdentifier: Assembly-CSharp::BossData
+  bossName: Morbane, Lord of the Dead
+  description: An immortal sovereign of death, draped in forgotten curses and crowned
+    with bone. Every fallen soul rises at its command, and hope withers wherever
+    its gaze lingers.
+  bossImage: {fileID: 3734716227786975437, guid: 7e5ff73598d8e4841bea4082b33d5689, type: 3}
+  weakElement: 1
+  bossPrefab: {fileID: 1368658501367382969, guid: 2f3ea14db7c6dc34a9db80f47ce2ab76, type: 3}
+  portalPrefab: {fileID: 38271591293647699, guid: fc22a0f1f30771a409dfa919cc5bc0a5, type: 3}

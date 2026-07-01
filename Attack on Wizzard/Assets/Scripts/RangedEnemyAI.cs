@@ -49,6 +49,8 @@ public class RangedEnemyAI : MonoBehaviour
         if (spriteRenderer != null)
             spriteRenderer.flipX = toPlayer.x < 0;
 
+        enemy.ClampToBorders();
+
         if (attackTimer <= 0f && distance <= preferredDistance + 2f)
         {
             Fire(toPlayer);

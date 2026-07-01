@@ -10,6 +10,7 @@ public class MageAttack : PlayerAttackBase
     private void Reset()
     {
         attackCooldown = 1.6f;
+        attackWindupDelay = 0.35f;
         baseDamage = 32f;
         element = ElementType.Ice;
         causesBleed = false;

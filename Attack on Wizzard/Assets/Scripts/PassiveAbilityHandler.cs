@@ -23,7 +23,13 @@ public class PassiveAbilityHandler : MonoBehaviour
 
     private void ApplyClass(GameManager.PlayerClassType classType)
     {
+        var visuals = CharacterVisualDatabase.Instance != null
+            ? CharacterVisualDatabase.Instance.GetVisuals(classType)
+            : null;
+
         playerBase.SetBonusElement(ElementTypeForClass(classType));
+        if (visuals != null)
+            playerBase.SetDefense(visuals.defense);
 
         switch (classType)
         {

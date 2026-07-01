@@ -6,6 +6,9 @@ public class BossBase : EnemyBase
     [Header("Boss Identity")]
     [SerializeField] protected string bossName = "Boss";
 
+    [Header("Facing")]
+    [SerializeField] private bool flipFacingOnX;
+
     [Header("Phase 2")]
     [SerializeField] protected float phase2Threshold = 0.5f;
 
@@ -49,7 +52,14 @@ public class BossBase : EnemyBase
         rb.linearVelocity = dir * chargeSpeed;
 
         var sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.flipX = dir.x < 0;
+        if (sr != null)
+        {
+            bool shouldFlip = dir.x < 0;
+            if (flipFacingOnX)
+                shouldFlip = !shouldFlip;
+
+            sr.flipX = shouldFlip;
+        }
     }
 
     protected void StopMoving() => rb.linearVelocity = Vector2.zero;

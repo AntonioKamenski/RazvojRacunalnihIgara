@@ -7,6 +7,9 @@ public class CharacterVisualDatabase : MonoBehaviour
     [System.Serializable]
     public class ClassVisuals
     {
+        [Header("Stats")]
+        public float defense = 0f;
+
         [Header("Idle / Walk")]
         public Sprite[] idleWalkFrames;
         public float idleFps = 8f;

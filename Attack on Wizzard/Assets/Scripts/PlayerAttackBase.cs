@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class PlayerAttackBase : MonoBehaviour
 {
     [Header("Attack Settings")]
     [SerializeField] protected float attackCooldown = 1f;
+    [SerializeField] protected float attackWindupDelay = 1f;
     [SerializeField] protected float baseDamage = 20f;
     [SerializeField] protected ElementType element = ElementType.None;
     [SerializeField] protected bool causesBleed = true;
@@ -27,11 +29,22 @@ public abstract class PlayerAttackBase : MonoBehaviour
             var target = FindNearestEnemy();
             if (target != null)
             {
-                Attack(target);
                 cooldownTimer = attackCooldown;
-                characterAnimator?.TriggerAttack();
-                OnAttackSFX();
+                StartCoroutine(AttackAfterDelay(target));
             }
+        }
+    }
+
+    private IEnumerator AttackAfterDelay(EnemyBase target)
+    {
+        if (attackWindupDelay > 0f)
+            yield return new WaitForSeconds(attackWindupDelay);
+
+        if (target != null && !target.IsDead)
+        {
+            characterAnimator?.TriggerAttack();
+            OnAttackSFX();
+            Attack(target);
         }
     }
 

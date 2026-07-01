@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4346244404228752641, guid: 6d6af2341ff081b49a11971fe21fca27, type: 3}
+  m_Sprite: {fileID: 5086530554919710896, guid: 5eabab653a536fc4694c0d1a3184d330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerProjectile
   lifetime: 6
-  rotationOffset: 0
+  rotationOffset: -135
   appliesChill: 0
   chillSlowFactor: 0.5
   chillDuration: 1.5

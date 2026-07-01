@@ -7,7 +7,7 @@ public class PoisonCloudUpgrade : ActiveUpgradeBase
     private float timer = 0f;
     private float cloudDamage = 6f;
     private float cloudDuration = 3f;
-    private float cloudRadius = 1.8f;
+    private float cloudRadius = 4f;
 
     public void Init(GameObject prefab) => cloudPrefab = prefab;
 

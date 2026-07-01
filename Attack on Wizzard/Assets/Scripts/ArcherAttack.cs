@@ -9,9 +9,10 @@ public class ArcherAttack : PlayerAttackBase
     private void Reset()
     {
         attackCooldown = 0.8f;
+        attackWindupDelay = 0.2f;
         baseDamage = 18f;
         element = ElementType.Lightning;
-        causesBleed = true;
+        causesBleed = false;
         bleedBuildup = 22f;
     }
 

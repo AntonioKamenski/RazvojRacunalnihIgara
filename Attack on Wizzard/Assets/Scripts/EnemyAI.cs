@@ -38,7 +38,15 @@ public class EnemyAI : MonoBehaviour
         rb.linearVelocity = direction * enemy.MoveSpeed;
 
         if (spriteRenderer != null)
-            spriteRenderer.flipX = direction.x < 0;
+        {
+            bool shouldFlip = direction.x < 0;
+            if (enemyAnimator != null && enemyAnimator.FlipFacingOnX)
+                shouldFlip = !shouldFlip;
+
+            spriteRenderer.flipX = shouldFlip;
+        }
+
+        enemy.ClampToBorders();
 
         float distance = Vector2.Distance(rb.position, player.transform.position);
         if (distance <= attackRange && attackTimer <= 0f)

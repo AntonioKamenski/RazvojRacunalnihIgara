@@ -12,6 +12,7 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField] private float attackFps = 12f;
 
     private SpriteRenderer sr;
+    private PlayerBase playerBase;
     private bool isPlayingAttack;
     private int idleFrame;
     private float idleTimer;
@@ -19,6 +20,7 @@ public class CharacterAnimator : MonoBehaviour
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        playerBase = GetComponent<PlayerBase>();
     }
 
     private void Start()
@@ -34,6 +36,14 @@ public class CharacterAnimator : MonoBehaviour
     {
         if (isPlayingAttack) return;
         if (idleWalkFrames == null || idleWalkFrames.Length == 0) return;
+
+        if (playerBase != null && !playerBase.IsMoving)
+        {
+            idleFrame = 0;
+            idleTimer = 0f;
+            sr.sprite = idleWalkFrames[0];
+            return;
+        }
 
         idleTimer -= Time.deltaTime;
         if (idleTimer <= 0f)

@@ -14,6 +14,10 @@ public class EnemyBase : MonoBehaviour, IBleedable
     [SerializeField] protected float attackCooldown = 1f;
     [SerializeField] protected int xpReward = 10;
 
+    [Header("Border Clamp")]
+    [SerializeField] private float borderPaddingX = 0.5f;
+    [SerializeField] private float borderPaddingY = 0.5f;
+
     [Header("Element")]
     [SerializeField] protected ElementType weakElement = ElementType.Fire;
     [SerializeField] protected float weaknessMultiplier = 1.5f;
@@ -115,6 +119,20 @@ public class EnemyBase : MonoBehaviour, IBleedable
         if (baseSpeed < 0f) baseSpeed = moveSpeed;
         if (slowCoroutine != null) StopCoroutine(slowCoroutine);
         slowCoroutine = StartCoroutine(SlowCoroutine(speedFactor, duration));
+    }
+
+    public void ClampToBorders()
+    {
+        if (MapBorders.Instance == null) return;
+
+        const float minimumBorderPadding = 2f;
+
+        Vector2 pos = rb.position;
+        float paddingX = Mathf.Max(borderPaddingX, minimumBorderPadding);
+        float paddingY = Mathf.Max(borderPaddingY, minimumBorderPadding);
+        pos.x = Mathf.Clamp(pos.x, MapBorders.Instance.minX + paddingX, MapBorders.Instance.maxX - paddingX);
+        pos.y = Mathf.Clamp(pos.y, MapBorders.Instance.minY + paddingY, MapBorders.Instance.maxY - paddingY);
+        rb.position = pos;
     }
 
     private IEnumerator SlowCoroutine(float speedFactor, float duration)

@@ -19,7 +19,7 @@ public class VoidWraith : BossBase
 
     private new void Start()
     {
-        bossName = "The Void Wraith";
+        bossName = "Thanaros, the Last Reaper";
         base.Start();
     }
 
@@ -61,7 +61,7 @@ public class VoidWraith : BossBase
         orbCooldown = 1.8f;
         teleportCooldown = 5f;
         orbCount += 3;
-        chargeSpeed = 8f;
+        chargeSpeed = 3f;
         cloneTimer = 2f;
     }
 

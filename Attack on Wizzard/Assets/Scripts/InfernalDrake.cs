@@ -19,7 +19,7 @@ public class InfernalDrake : BossBase
 
     private new void Start()
     {
-        bossName = "The Infernal Drake";
+        bossName = "Azrakar, Tyrant of the Abyss";
         base.Start();
     }
 
@@ -59,7 +59,7 @@ public class InfernalDrake : BossBase
 
     protected override void OnPhaseTwo()
     {
-        chargeSpeed = 6f;
+        chargeSpeed = 3f;
         breathCooldown = 2f;
         novaCooldown = 5f;
         summonTimer = 2f;

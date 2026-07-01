@@ -13,6 +13,9 @@ public class EscapeMenuManager : MonoBehaviour
     [SerializeField] private Button changeMusicButton;
     [SerializeField] private Button musicToggleButton;
 
+    [Header("Music Volume")]
+    [SerializeField] private Slider musicVolumeSlider;
+
     [Header("Music Toggle Sprites")]
     [SerializeField] private Sprite musicOnSprite;
     [SerializeField] private Sprite musicOffSprite;
@@ -30,6 +33,12 @@ public class EscapeMenuManager : MonoBehaviour
         mainMenuButton.onClick.AddListener(OnMainMenuClicked);
         changeMusicButton.onClick.AddListener(OnChangeMusicClicked);
         musicToggleButton.onClick.AddListener(OnMusicToggleClicked);
+
+        if (musicVolumeSlider != null)
+        {
+            musicVolumeSlider.SetValueWithoutNotify(AudioManager.Instance != null ? AudioManager.Instance.GetMusicVolume() : 1f);
+            musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
+        }
     }
 
     private void Update()
@@ -69,6 +78,11 @@ public class EscapeMenuManager : MonoBehaviour
         GameManager.Instance.ToggleMusic();
         AudioManager.Instance?.SetMusicEnabled(GameManager.Instance.IsMusicEnabled);
         UpdateMusicIcon();
+    }
+
+    private void OnMusicVolumeChanged(float value)
+    {
+        AudioManager.Instance?.SetMusicVolume(value);
     }
 
     private void RefreshUI()

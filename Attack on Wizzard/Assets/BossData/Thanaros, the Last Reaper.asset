@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76dfd96f853ae5439789432d245a094, type: 3}
+  m_Name: Thanaros, the Last Reaper
+  m_EditorClassIdentifier: Assembly-CSharp::BossData
+  bossName: Thanaros, the Last Reaper
+  description: An ageless collector of souls, silent as the grave and inevitable
+    as the setting sun. Its presence stills the world, and every heartbeat echoes
+    like the final toll before eternity.
+  bossImage: {fileID: 675151256554756322, guid: cad88168226e27b40849efe337b9916f, type: 3}
+  weakElement: 3
+  bossPrefab: {fileID: 2927943033422378123, guid: d36704a32d2e994479a8c534c79b4424, type: 3}
+  portalPrefab: {fileID: 4363680776432061817, guid: 12520ed416ff473489d7fd63d46c4304, type: 3}

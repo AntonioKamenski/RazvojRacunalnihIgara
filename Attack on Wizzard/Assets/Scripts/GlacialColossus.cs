@@ -20,7 +20,7 @@ public class GlacialColossus : BossBase
 
     private new void Start()
     {
-        bossName = "The Glacial Colossus";
+        bossName = "Morbane, Lord of the Dead";
         base.Start();
     }
 
@@ -52,7 +52,7 @@ public class GlacialColossus : BossBase
         spikeCooldown = 2.5f;
         beamCooldown = 7f;
         spikeCount += 4;
-        chargeSpeed = 4f;
+        chargeSpeed = 3f;
     }
 
     private void IceSpikes()

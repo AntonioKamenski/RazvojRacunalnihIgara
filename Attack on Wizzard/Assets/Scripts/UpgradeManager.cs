@@ -25,6 +25,11 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private GameObject iceEffectPrefab;
     [SerializeField] private GameObject lightningEffectPrefab;
 
+    [Header("Visual Effect Rotation Offsets")]
+    [SerializeField] private float fireEffectRotationOffset = 90f;
+    [SerializeField] private float iceEffectRotationOffset = 90f;
+    [SerializeField] private float lightningEffectRotationOffset = 0f;
+
     private PlayerBase player;
     private float timer = 0f;
     private readonly Dictionary<UpgradeType, int> levels = new Dictionary<UpgradeType, int>();
@@ -148,15 +153,15 @@ public class UpgradeManager : MonoBehaviour
                 break;
             case UpgradeType.ChainLightning:
                 var cl = player.gameObject.AddComponent<ChainLightningUpgrade>();
-                cl.Init(lightningEffectPrefab);
+                cl.Init(lightningEffectPrefab, lightningEffectRotationOffset);
                 break;
             case UpgradeType.FireAura:
                 var fa = player.gameObject.AddComponent<FireAuraUpgrade>();
-                fa.Init(fireEffectPrefab);
+                fa.Init(fireEffectPrefab, fireEffectRotationOffset);
                 break;
             case UpgradeType.FrostNova:
                 var fn = player.gameObject.AddComponent<FrostNovaUpgrade>();
-                fn.Init(iceEffectPrefab);
+                fn.Init(iceEffectPrefab, iceEffectRotationOffset);
                 break;
             case UpgradeType.ShadowDaggers:
                 var sd = player.gameObject.AddComponent<ShadowDaggersUpgrade>();

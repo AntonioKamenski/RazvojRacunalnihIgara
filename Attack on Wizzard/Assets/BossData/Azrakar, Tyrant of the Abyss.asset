@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76dfd96f853ae5439789432d245a094, type: 3}
+  m_Name: Azrakar, Tyrant of the Abyss
+  m_EditorClassIdentifier: Assembly-CSharp::BossData
+  bossName: Azrakar, Tyrant of the Abyss
+  description: A monstrous ruler born from the deepest abyss, wreathed in endless
+    flame and malice. The ground blackens beneath its feet, and the bravest hearts
+    surrender to terror before the battle begins.
+  bossImage: {fileID: 1219578371768908172, guid: 42ce9e808bfc0c449aec69c22be8b1eb, type: 3}
+  weakElement: 2
+  bossPrefab: {fileID: 7017801308063807842, guid: c94204bac3b3025429caad18fa85fc3e, type: 3}
+  portalPrefab: {fileID: 1901519991162518123, guid: 69fc50fec0a663a4ab2135f292a3d89d, type: 3}

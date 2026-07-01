@@ -3,7 +3,7 @@ using UnityEngine;
 public class WarriorAttack : PlayerAttackBase
 {
     [Header("Warrior — Swing Settings")]
-    [SerializeField] private float swingRange = 2f;
+    [SerializeField] private float swingRange = 3f;
 
     private void Reset()
     {

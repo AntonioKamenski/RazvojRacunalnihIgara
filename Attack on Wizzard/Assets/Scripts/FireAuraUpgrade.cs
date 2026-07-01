@@ -3,9 +3,14 @@ using UnityEngine;
 public class FireAuraUpgrade : ActiveUpgradeBase
 {
     private GameObject fireEffectPrefab;
+    private float fireEffectRotationOffset;
     [SerializeField] private int effectsPerTick = 6;
 
-    public void Init(GameObject effectPrefab) => fireEffectPrefab = effectPrefab;
+    public void Init(GameObject effectPrefab, float rotationOffset)
+    {
+        fireEffectPrefab = effectPrefab;
+        fireEffectRotationOffset = rotationOffset;
+    }
 
     private float radius = 2f;
     private float damage = 5f;
@@ -48,7 +53,7 @@ public class FireAuraUpgrade : ActiveUpgradeBase
             Vector2 offset = Random.insideUnitCircle * radius;
             var go = Instantiate(fireEffectPrefab,
                                  (Vector2)transform.position + offset,
-                                 Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+                                 Quaternion.Euler(0f, 0f, fireEffectRotationOffset));
             var effect = go.GetComponent<TemporarySpriteEffect>();
             if (effect == null) effect = go.AddComponent<TemporarySpriteEffect>();
         }

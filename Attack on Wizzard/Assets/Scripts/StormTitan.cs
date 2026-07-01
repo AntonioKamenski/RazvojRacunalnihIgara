@@ -18,7 +18,7 @@ public class StormTitan : BossBase
 
     private new void Start()
     {
-        bossName = "The Storm Titan";
+        bossName = "Vaelith, Keeper of the Arcane Throne";
         base.Start();
     }
 
@@ -57,7 +57,7 @@ public class StormTitan : BossBase
         strikeCooldown = 1.5f;
         chainCount += 2;
         groundZoneCooldown = 7f;
-        chargeSpeed = 7f;
+        chargeSpeed = 3f;
     }
 
     private IEnumerator LightningStrike()

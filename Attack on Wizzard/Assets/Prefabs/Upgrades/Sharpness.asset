@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sharpness
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
   upgradeName: Sharpness
-  description: +20% attack speed (faster cooldown).
+  description: +10% attack damage.
   icon: {fileID: -8765067086150604460, guid: d1ea3e46505a34d40b31e6d0041e7946, type: 3}
   type: 9
   maxLevel: 5

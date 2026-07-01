@@ -3,9 +3,14 @@ using UnityEngine;
 public class FrostNovaUpgrade : ActiveUpgradeBase
 {
     private GameObject iceEffectPrefab;
+    private float iceEffectRotationOffset;
     [SerializeField] private int spikeCount = 10;
 
-    public void Init(GameObject effectPrefab) => iceEffectPrefab = effectPrefab;
+    public void Init(GameObject effectPrefab, float rotationOffset)
+    {
+        iceEffectPrefab = effectPrefab;
+        iceEffectRotationOffset = rotationOffset;
+    }
 
     private float radius = 3f;
     private float damage = 15f;
@@ -52,7 +57,7 @@ public class FrostNovaUpgrade : ActiveUpgradeBase
             Vector2 pos = (Vector2)transform.position + new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * radius;
 
             // Rotate sprite to point outward from center
-            var go = Instantiate(iceEffectPrefab, pos, Quaternion.Euler(0f, 0f, angle));
+            var go = Instantiate(iceEffectPrefab, pos, Quaternion.Euler(0f, 0f, angle + iceEffectRotationOffset));
             var effect = go.GetComponent<TemporarySpriteEffect>();
             if (effect == null) effect = go.AddComponent<TemporarySpriteEffect>();
         }
